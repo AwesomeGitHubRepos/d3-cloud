@@ -47,7 +47,7 @@ module.exports = function() {
           d.font = font.call(this, d, i);
           d.style = fontStyle.call(this, d, i);
           d.weight = fontWeight.call(this, d, i);
-          d.rotate = rotate.call(this, d, i);
+          d.rotate = rotate.call(this, d, i, random);
           d.size = ~~fontSize.call(this, d, i);
           d.padding = padding.call(this, d, i);
           return d;
@@ -228,7 +228,7 @@ function cloudFontSize(d) {
   return Math.sqrt(d.value);
 }
 
-function cloudRotate() {
+function cloudRotate(d, i, random) {
   return (~~(random() * 6) - 3) * 30;
 }
 
